@@ -17,10 +17,40 @@ public class PasswordGenerator {
       String specialChars = "<>,.?/{}[]+-+@#$%&*()!^";
       
       //combine character sets to form the complete set of characters for passwrod generation
-      String combination = lower_case + upper_case + specialChars + numbers;
+      //String combination = lower_case + upper_case + specialChars + numbers;
+      String combination = "";
+      
+      //prompt user to choose character sets
+      System.out.println("Choose character sets to include in the password:");
+      System.out.println("1. Lowercase letters");
+      System.out.println("2. Uppercase letters");
+      System.out.println("3. Numbers");
+      System.out.println("4. Special Characters");
+      System.out.print("Enter the numbers (seperated by spaces) corresponding to the character sets you want to include: ");
+      
+      //read user input for choices 
+      String choices = scan.nextLine();
+      
+      //add selected character sets to the combination
+      for(char choice : choices.toCharArray()){
+         switch(choice){
+            case '1':
+               combination += lower_case;
+               break;
+            case '2':
+               combination += upper_case;
+               break;
+            case '3':
+               combination += numbers;
+               break;
+            case '4':
+               combination += specialChars;
+               break;
+         }
+      }
       
       //prompt user for desired length of the password
-      System.out.println("Enter the length for your new password: ");
+      System.out.print("Enter the length for your new password: ");
       int length = scan.nextInt();
       
       //create an array to store the new password
@@ -35,6 +65,6 @@ public class PasswordGenerator {
       }
       
       //output new password to user
-      System.out.println("New Generated Password: " + new String(password));
+      System.out.println("\nNew Generated Password: " + new String(password));
    }  
 }
