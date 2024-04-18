@@ -1,5 +1,6 @@
 # Password Generator
 Description
+
 The Password Generator is a simple Java program that enables users to create secure passwords with ease. It offers flexibility by allowing users to select from a variety of character sets, including lowercase letters, uppercase letters, numbers, and special characters. With customizable options, users can generate passwords tailored to their specific needs.
 
 # Features
